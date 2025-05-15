@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Battle Royale</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Rock Paper Scissors Battle!</h1>
+        <button id="mute-btn">Mute Sounds</button> </header>
+
+    <div id="controls-top">
+        <button id="add-scissors-btn" title="Add Scissors"><img src="images/scissors_icon.png" alt="Scissors Icon" onerror="this.style.display='none'"><span>Scissors</span></button>
+        <button id="add-paper-btn" title="Add Paper"><img src="images/paper_icon.png" alt="Paper Icon" onerror="this.style.display='none'"><span>Paper</span></button>
+        <button id="add-rock-btn" title="Add Rock"><img src="images/rock_icon.png" alt="Rock Icon" onerror="this.style.display='none'"><span>Rock</span></button>
+    </div>
+
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div id="winner-announcement" class="hidden">
+            <p id="winner-text"></p>
+        </div>
+    </div>
+
+    <div id="controls-bottom">
+        <button id="start-pause-resume-btn">Start</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

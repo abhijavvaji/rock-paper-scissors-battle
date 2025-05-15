@@ -1,0 +1,141 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    color: #333;
+    touch-action: manipulation;
+    background-color: #e0e0e0; 
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23c0c0c0' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414zM41.95 17.536l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    overflow-x: hidden;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+    position: relative; /* For positioning mute button */
+}
+
+/* POINT 3: Mute Button Style */
+#mute-btn {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    padding: 8px 12px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#mute-btn:hover {
+    background-color: #777;
+}
+
+
+#controls-top, #controls-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    background-color: #e0e0e0;
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+#controls-top button, #controls-bottom button {
+    padding: 10px 15px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#controls-top button:hover, #controls-bottom button:hover {
+    background-color: #45a049;
+}
+
+#controls-top button:active, #controls-bottom button:active {
+    transform: scale(0.98);
+}
+
+#controls-bottom button#reset-btn {
+    background-color: #f44336;
+}
+
+#controls-bottom button#reset-btn:hover {
+    background-color: #e53935;
+}
+
+#controls-top button img {
+    width: 20px;
+    height: 20px;
+}
+
+button:disabled {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+#game-container {
+    width: 90vw;
+    max-width: 600px;
+    aspect-ratio: 1 / 1;
+    margin: 20px auto;
+    position: relative;
+    border: 3px solid #333;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    flex-shrink: 0; 
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#winner-announcement {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(26, 133, 26, 0.9);
+    color: white;
+    padding: 25px 40px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: clamp(1.5em, 4vw, 2.2em);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+    z-index: 1000; 
+    animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.hidden {
+    display: none !important;
+}
